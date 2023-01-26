@@ -1,0 +1,59 @@
+{
+	"main": {
+		"SERVICE_NAME": "core-dns",
+		"DOMAIN": "null" 
+	},
+	"containers": [
+		{ 
+			"IMAGE": "registry.format.hu/core-dns:latest",
+			"UPDATE": "true",
+			"NAME": "core_dns",
+			"SELECTOR": "coredns1",
+			"SCALE": "0",
+			"MEMORY": "64M",
+			"NETWORK": "core-dns",
+			"VOLUMES": [
+				{	
+				"SOURCE": "/etc/system/data/dns/hosts.local",
+				"DEST": "/etc/dnsmasq.d/hosts.local",
+				"TYPE": "ro"
+				},
+				{	
+				"SOURCE": "/etc/system/log/dns/",
+				"DEST": "/var/log/dnsmasq/",
+				"TYPE": "rw"
+				}
+				],
+			"PORTS": [ 
+    				{
+				 "SOURCE": "null",
+				 "DEST": "53",
+				 "TYPE": "udp"
+				},
+    				{
+				 "SOURCE": "null",
+				 "DEST": "67",
+				 "TYPE": "udp"
+				},
+    				{
+				 "SOURCE": "null",
+				 "DEST": "68",
+				 "TYPE": "udp"
+				}
+				  ],
+			"READYNESS": [
+			        {"tcp": ""},
+			        {"HTTP": ""},
+				{"EXEC": "/ready.sh"}
+				],
+			"ENVS": [
+				],
+			"EXTRA": "--restart unless-stopped",
+			"DEPEND": "null",
+			"START_ON_BOOT": "true",
+			"CMD": "null",
+			"PRE_START": "null",
+			"POST_START": "null"
+		}
+	]
+}
