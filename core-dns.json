@@ -8,8 +8,7 @@
 			"IMAGE": "registry.format.hu/core-dns:latest",
 			"UPDATE": "true",
 			"NAME": "core_dns",
-			"SELECTOR": "coredns1",
-			"SCALE": "0",
+			"SELECTOR": "coredns",
 			"MEMORY": "64M",
 			"NETWORK": "core-dns",
 			"VOLUMES": [
