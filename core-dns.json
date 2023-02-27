@@ -14,8 +14,8 @@
 			"NETWORK": "core-dns",
 			"VOLUMES": [
 				{	
-				"SOURCE": "/etc/system/data/dns/hosts.local",
-				"DEST": "/etc/dnsmasq.d/hosts.local",
+				"SOURCE": "/etc/system/data/dns",
+				"DEST": "/etc/dnsmasq.d",
 				"TYPE": "ro"
 				},
 				{	
