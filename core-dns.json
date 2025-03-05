@@ -5,7 +5,7 @@
 	},
 	"containers": [
 		{ 
-			"IMAGE": "registry.format.hu/core-dns:latest",
+			"IMAGE": "safebox/core-dns:latest",
 			"UPDATE": "true",
 			"NAME": "core_dns",
 			"SELECTOR": "coredns",
